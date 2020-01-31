@@ -1,0 +1,39 @@
+#include <iostream> 
+#include <string>
+#include <stdio.h> 
+using namespace std; 
+
+int main(){
+	
+	char in[1000000];
+	
+	while(gets(in)){
+	
+	int initBottles = stoi(in);
+	
+	int borrow = 1;
+	int totalBottles = initBottles;
+	
+	int drink = 0;
+	int emptyBottles = borrow;
+	
+	drink += totalBottles;
+	do{
+		
+		emptyBottles += totalBottles;
+		totalBottles = emptyBottles/3;
+		
+		emptyBottles = emptyBottles%3;
+		
+		drink += totalBottles;
+		
+		if(totalBottles == 0){
+			break;
+		}
+	
+	}while(true);
+		printf("%d\n",drink);
+	}
+	
+	return 0;
+}
